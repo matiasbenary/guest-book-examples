@@ -6,7 +6,11 @@ import { NearProvider } from "@/hooks/useNearWallet";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <NearProvider>
+    <NearProvider
+      network="testnet"
+      contractId="guestbook.near-examples.testnet"
+      allowedMethods={["add_message"]}
+    >
       <Navigation />
       <Component {...pageProps} />
     </NearProvider>
